@@ -9,45 +9,45 @@
 				<table id="detailsTable" class="table">
 					<tr>
 						<th>Team Name:</th>
-						<td>{{ team.name }}</td>
+						<td>{{ contact.fname }}</td>
 					</tr>
 					<tr>
 						<th>Year Founded:</th>
-						<td>{{ team.founded }}</td>
+						<td>{{ contact.lname }}</td>
 					</tr>
 					<tr>
 						<th>Manager Name:</th>
-						<td>{{ team.manager }}</td>
+						<td>{{ contact.address }}</td>
 					</tr>
 					<tr>
 						<th>City Located:</th>
-						<td>{{ team.city }}</td>
+						<td>{{ contact.city }}</td>
 					</tr>
 					<tr>
 						<th>Stadium Name:</th>
-						<td>{{ team.stadium }}</td>
+						<td>{{ contact.zipcode }}</td>
 					</tr>
 					<tr>
 						<th>Stadium Capacity:</th>
-						<td>{{ team.capacity }}</td>
+						<td>{{ team.mnumber }}</td>
 					</tr>
 					<tr>
 						<th>Team Website:</th>
-						<td><a href="{{ team.websiteLink }}" target="_blank">{{ team.websiteLink }}</a></td>
+						<td><a href="{{ contact.lnumber }}" target="_blank">{{ contact.lnumber }}</a></td>
 					</tr>
 				</table>
 			</div>
 			<div class="col-md-6">
-				<img id="teamBadge" ng-src="angularjs\{{ team.image }}" height="250"  />
+				<img id="contactBadge" ng-src="contactimg\{{ contact.photo }}" height="250"  />
 			</div>
 		</div>
 			<div class="col-md.12">
-				<p id="detailsPara">{{ team.details }}</p>
+				<p id="realtionPara">{{ contact.relation }}</p>
 			</div>
 
 		<p> 
-			<a href="#/edit/{{ team.id }}" class="btn btn-info" role="button">Edit Team</a> 
-			<a href="#/delete/{{ team.id }}" class="btn btn-danger" role="button">Delete Team</a>
+			<a href="#/edit/{{ contact.id }}" class="btn btn-info" role="button">Edit Contact</a> 
+			<a href="#/delete/{{ contact.id }}" class="btn btn-danger" role="button">Delete Contact</a>
 		</p>
 
 
