@@ -21,7 +21,7 @@ angular.module('contactServices', [])
 	};
 })
 // One big team service that handles the individual components we'll need for the teams
-.factory('contactServices', ['$http', function($http){
+.factory('contactService', ['$http', function($http){
 	return {
 		contactsList: function(callback){
 			$http.get('contacts/contacts.php?action=list').success(callback);
