@@ -6,7 +6,7 @@ $mysqli = mysqli_connect("localhost", "root", "Sticker101?", "contacts");
 switch($_GET["action"]){
 	// Switch case for the team list controller
 	case "list":
-		$query = "select * from contactList";
+		$query = "SELECT * FROM contactList";
 		$result = $mysqli->query($query);
 		while ($row = $result->fetch_assoc()) {
 		$json[] = array('fname' => $row['fname'], 'lname' => $row['lname'], 'address' => $row['address'], 'city' => $row['city'], 'zipcode' => $row['zipcode'], 'mnumber' => $row['mnumber'], 'lnumber' => $row['lnumber'], 'relation' => $row['relation'], 'photo' => $row['photo']);
@@ -17,7 +17,7 @@ switch($_GET["action"]){
 	// Switch case for the team details controller
 	case "detail":
 	 	$id = $_GET['id'];
-		$query = $mysqli->prepare('select * from contactList where id = ?');
+		$query = $mysqli->prepare('SELECT * FROM contactList WHERE id = ?');
 		$query->bind_param('i', $id);
 		$query->execute();
 		$result = $query->get_result();
@@ -70,7 +70,7 @@ switch($_GET["action"]){
 		} else {
 			$file = $_POST['photo'];
 		}
-		$query = $mysqli->prepare('UPDATE contactList SET fname = ?, lname = ?, address = ?, city = ?, zipcode = ?, mnumber = ?, lnumber = ?, relation = ?, photo = ?, details = ? where id = ?');
+		$query = $mysqli->prepare('UPDATE contactList SET fname = ?, lname = ?, address = ?, city = ?, zipcode = ?, mnumber = ?, lnumber = ?, relation = ?, photo = ?, details = ? WHERE id = ?');
 		$query->bind_param('sssssssssi', $_POST['fname'], $_POST['lname'], $_POST['address'], $_POST['city'], $_POST['zipcode'], $_POST['mnumber'], $_POST['lnumber'], $_POST['relation'], $file, $id);
 		$query->execute();
 		$mysqli->close();
@@ -78,7 +78,7 @@ switch($_GET["action"]){
 
 	case "delete":
 		$id = $_GET['id'];
-		$query = $mysqli->prepare('delete from contactList where id = ?');
+		$query = $mysqli->prepare('DELETE FROM contactList WHERE id = ?');
 		$query->bind_param('i', $id);
 		$query->execute();
 		$mysqli->close();
