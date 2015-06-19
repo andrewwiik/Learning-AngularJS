@@ -44,7 +44,7 @@ switch($_GET["action"]){
 		$data = base64_decode($img);
 		$success = file_put_contents($file, $data);
 
-		$query = $mysqli->prepare('insert into contactList (fname, lname, address, city, zipcode, mnumber, lnumber, relation, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
+		$query = $mysqli->prepare('INSERT INTO contactList (fname, lname, address, city, zipcode, mnumber, lnumber, relation, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
 		$query->bind_param('sssssssss', $_POST['fname'], $_POST['lname'], $_POST['address'], $_POST['city'], $_POST['zipcode'], $_POST['mnumber'], $_POST['lnumber'], $_POST['details'], $file);
 		$query->execute();
 		$mysqli->close();
