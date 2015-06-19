@@ -7,7 +7,7 @@ var contactApp = angular.module('contactApp', [
 	'contactServices'
 ]);
 // Football App route provider
-footballApp.config(['$routeProvider', 
+contactApp.config(['$routeProvider', 
 	function($routeProvider) {
 		$routeProvider.
 			when('/welcome', {
