@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 1);
 //MYSQLI sting to connect to the database
 $mysqli = mysqli_connect("localhost", "root", "Sticker101?", "contacts");
 
