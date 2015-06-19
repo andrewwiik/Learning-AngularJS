@@ -22,7 +22,7 @@ switch($_GET["action"]){
 		$query->execute();
 		$result = $query->get_result();
 		while ($row = $result->fetch_assoc()){
-		 	$json = array('id' => $row['id'], 'fname' => $row['fname'], 'lname' => $row['lname'], 'address' => $row['address'], 'city' => $row['city'], 'zipcode' => $row['zipcode'], 'mnumber' => $row['mnumber'], 'lnumber' => $row['lnumber'], 'relation' => $row['relation'], 'photo' => $row['photo']
+		 	$json = array('id' => $row['id'], 'fname' => $row['fname'], 'lname' => $row['lname'], 'address' => $row['address'], 'city' => $row['city'], 'zipcode' => $row['zipcode'], 'mnumber' => $row['mnumber'], 'lnumber' => $row['lnumber'], 'relation' => $row['relation'], 'photo' => $row['photo']);
 		 }
 		 echo json_encode($json);
 		 $mysqli->close();
