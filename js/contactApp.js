@@ -30,7 +30,7 @@ contactApp.config(['$routeProvider',
 				controllers: 'editContactController'	
 			}).
 			when('/delete/:contactId', {
-				templateUrl: 'teams/deleteContact.html',
+				templateUrl: 'contacts/deleteContact.html',
 				controllers: 'deleteContactController'	
 			}).
 			otherwise({
