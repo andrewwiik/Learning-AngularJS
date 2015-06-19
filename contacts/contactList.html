@@ -9,14 +9,15 @@
   <div ng-show="!loading"> 
   <table class="table">
     <thead>
-    <th><a href="" ng-click="sortField='name'; reverse = !reverse">Team Name</a></th>
-    <th><a href="" ng-click="sortField='founded'; reverse = !reverse">Founded</a></th>
+    <th><a href="" ng-click="sortField='fname'; reverse = !reverse">First Name</a></th>
+    <th><a href="" ng-click="sortField='lname'; reverse = !reverse">Last Name</a></th>
+    <th><a href="" ng-click="sortField='address'; reverse = !reverse">Address</a></th>
     <th><a href="" ng-click="sortField='city'; reverse = !reverse">City</a></th>
-    <th><a href="" ng-click="sortField='stadium'; reverse = !reverse">Stadium/Arena</a></th>
-    <th><a href="" ng-click="sortField='capacity'; reverse = !reverse">Capacity</a></th>
-    <th><a href="" ng-click="sortField='manager'; reverse = !reverse">Manager</a></th>
-    <th><a href="" ng-click="sortField='manager'; reverse = !reverse">Relation</a></th>
-    <th><a href="" ng-click="sortField='manager'; reverse = !reverse">Photo</a></th>
+    <th><a href="" ng-click="sortField='zipcode'; reverse = !reverse">Zip Code</a></th>
+    <th><a href="" ng-click="sortField='mnumber'; reverse = !reverse">Mobile Number</a></th>
+    <th><a href="" ng-click="sortField='lnumber'; reverse = !reverse">Home Number</a></th>
+    <th><a href="" ng-click="sortField='relation'; reverse = !reverse">Relation</a></th>
+    <th><a href="" ng-click="sortField='photo'; reverse = !reverse">Photo</a></th>
     </thead>
    <tr ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
 <td><a href="{{ contact.fname }}" target="_blank">{{ contact.fname }}</a></td>
