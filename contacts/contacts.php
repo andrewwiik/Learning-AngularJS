@@ -70,7 +70,7 @@ switch($_GET["action"]){
 		} else {
 			$file = $_POST['photo'];
 		}
-		$query = $mysqli->prepare('UPDATE contactList SET fname = ?, lname = ?, address = ?, city = ?, zipcode = ?, mnumber = ?, lnumber = ?, relation = ?, photo = ?, details = ? WHERE id = ?');
+		$query = $mysqli->prepare('UPDATE contactList SET fname = ?, lname = ?, address = ?, city = ?, zipcode = ?, mnumber = ?, lnumber = ?, relation = ?, photo = ?, relation = ? WHERE id = ?');
 		$query->bind_param('sssssssssi', $_POST['fname'], $_POST['lname'], $_POST['address'], $_POST['city'], $_POST['zipcode'], $_POST['mnumber'], $_POST['lnumber'], $_POST['relation'], $file, $id);
 		$query->execute();
 		$mysqli->close();
