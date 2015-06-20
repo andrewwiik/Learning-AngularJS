@@ -33,7 +33,8 @@ angular.module('contactServices', [])
 			$http.post('contacts/contacts.php?action=add', readyFormData, { transformRequest: angular.identity, headers: { "Content-Type": undefined } }).success(callback);
 		},
 		editContact: function(id, readyFormData, callback){
-			$http.post('contacts/contacts.php?action=edit&id=' + id, readyFormData, { transformRequest: angular.identity, headers: { "Content-Type": undefined } }).success(callback);	
+			$http.post('contacts/contacts.php?action=edit&id=' + id, readyFormData, { transformRequest: angular.identity, headers: { "Content-Type": undefined } }).success(callback){
+            console.log("inserted Successfully"});
 		},
 		deleteContact: function(id, callback){
 			$http.post('contacts/contacts.php?action=delete&id=' + id).success(callback);
